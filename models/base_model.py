@@ -59,4 +59,5 @@ class BaseModel:
     def __str__(self):
         """string representation of all class instance and it's attributes"""
 
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        return "[{}] ({}) {}".\
+            format(type(self).__name__, self.id, self.__dict__)

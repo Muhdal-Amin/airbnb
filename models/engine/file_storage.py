@@ -17,7 +17,7 @@ class FileStorage:
 
     def new(self, obj):
         """sets the key-value pair in __objects (class.id as key, obj as val)"""
-        keyFormat = f"{obj.__class__.__name__}.{obj.id}"
+        keyFormat = "{}.{}".format(type(obj).__name__, obj.id)
         FileStorage.__objects[keyFormat] = obj
 
     def save(self):
